@@ -151,7 +151,6 @@ sub handler {
   my ( $class, $method ) = $action =~ m|(.*?)#(.*)|;
   $class  =~ s|/|::|g;
 
-  print STDERR " $scheme | $class | $method \n";
   unless ( %Redirect ) {
 	foreach ( $self->dispatch_to() ) {
 		push (@INC, $_ ) if m|/|;
@@ -201,7 +200,7 @@ sub handler {
   }
 
 
-  $self->SUPER::handle;
+  SOAP::Transport::HTTP::Server::handle ( $self );
 
 
   if ($self->response->is_success) {
@@ -219,6 +218,7 @@ sub handler {
 }
 
 # ======================================================================
+
 
 1;
 

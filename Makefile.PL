@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	NAME		=> 'SOAP',
 	DISTNAME	=> 'SOAP-Lite-SmartProxy',
-	VERSION 	=> '0.10',
+	VERSION 	=> '0.11',
 	PREREQ_PM 	=> { 'SOAP::Lite' => '0.46' },
 	dist		=>	{ 
 		COMPRESS	=>	"gzip -9f",
